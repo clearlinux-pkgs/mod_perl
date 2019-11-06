@@ -1,0 +1,31 @@
+From 2bcb08b4cc42785614f3296d8ec949f8b861fae2 Mon Sep 17 00:00:00 2001
+From: "Brett T. Warden" <brett.t.warden@intel.com>
+Date: Wed, 6 Nov 2019 11:48:13 -0800
+Subject: [PATCH] Fixup installation paths
+
+---
+ Makefile.PL | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/Makefile.PL b/Makefile.PL
+index 2ceb943..1f1323c 100644
+--- a/Makefile.PL
++++ b/Makefile.PL
+@@ -731,11 +731,11 @@ modperl_lib:
+ 	cd "$(MODPERL_SRC)" && $(MAKE)
+ 
+ modperl_lib_install:
+-	cd "$(MODPERL_SRC)" && $(MAKE) DESTDIR=$(DESTDIR) install
++	cd "$(MODPERL_SRC)" && $(MAKE) DESTDIR=$(PERL_INSTALL_ROOT)$(DESTDIR) install
+ 
+ modperl_xs_h_install:
+-	@$(MKPATH) $(DESTDIR)$(MODPERL_AP_INCLUDEDIR)
+-	$(CP) $(MODPERL_XS_H_FILES) $(DESTDIR)$(MODPERL_AP_INCLUDEDIR)
++	@$(MKPATH) $(PERL_INSTALL_ROOT)$(DESTDIR)$(MODPERL_AP_INCLUDEDIR)
++	$(CP) $(MODPERL_XS_H_FILES) $(PERL_INSTALL_ROOT)$(DESTDIR)$(MODPERL_AP_INCLUDEDIR)
+ 
+ modperl_src_clean:
+ 	cd "$(MODPERL_SRC)" && $(MAKE) clean
+-- 
+2.23.0
+

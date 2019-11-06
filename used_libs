@@ -1,0 +1,6 @@
+libapr-1.so.0
+libaprutil-1.so.0
+libc.so.6
+libdl.so.2
+libperl.so
+libpthread.so.0
