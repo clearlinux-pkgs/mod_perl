@@ -6,7 +6,7 @@
 #
 Name     : mod_perl
 Version  : 2.0.11
-Release  : 1
+Release  : 2
 URL      : https://www.apache.org/dist/perl/mod_perl-2.0.11.tar.gz
 Source0  : https://www.apache.org/dist/perl/mod_perl-2.0.11.tar.gz
 Source1 : https://www.apache.org/dist/perl/mod_perl-2.0.11.tar.gz.asc
@@ -17,6 +17,7 @@ Requires: mod_perl-bin = %{version}-%{release}
 Requires: mod_perl-lib = %{version}-%{release}
 Requires: mod_perl-license = %{version}-%{release}
 Requires: mod_perl-perl = %{version}-%{release}
+Requires: perl(Linux::Pid)
 BuildRequires : apr-dev
 BuildRequires : apr-util-dev
 BuildRequires : buildreq-cpan
