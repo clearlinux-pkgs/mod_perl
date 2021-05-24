@@ -6,7 +6,7 @@
 #
 Name     : mod_perl
 Version  : 2.0.11
-Release  : 11
+Release  : 12
 URL      : https://www.apache.org/dist/perl/mod_perl-2.0.11.tar.gz
 Source0  : https://www.apache.org/dist/perl/mod_perl-2.0.11.tar.gz
 Source1  : https://www.apache.org/dist/perl/mod_perl-2.0.11.tar.gz.asc
@@ -29,6 +29,7 @@ BuildRequires : httpd-dev
 BuildRequires : httpd-extras
 BuildRequires : util-linux-dev
 Patch1: 0001-Fixup-installation-paths.patch
+Patch2: build.patch
 
 %description
 Mod_perl incorporates a Perl interpreter into the Apache web server,
@@ -92,6 +93,7 @@ perl components for the mod_perl package.
 %setup -q -n mod_perl-2.0.11
 cd %{_builddir}/mod_perl-2.0.11
 %patch1 -p1
+%patch2 -p1
 
 %build
 ## build_prepend content
