@@ -1,1 +1,6 @@
+# Exclude a conditional package defined in
+# `Apache-Test/lib/Apache/TestRequest.pm`. The distro provider is the
+# `perl-HTTP-Message` package.
+%global __provides_exclude ^perl\\(HTTP::Request::Common\\)$
+
 export MP_APR_CONFIG=/usr/bin/apr-1-config

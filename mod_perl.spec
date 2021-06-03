@@ -6,7 +6,7 @@
 #
 Name     : mod_perl
 Version  : 2.0.11
-Release  : 13
+Release  : 14
 URL      : https://www.apache.org/dist/perl/mod_perl-2.0.11.tar.gz
 Source0  : https://www.apache.org/dist/perl/mod_perl-2.0.11.tar.gz
 Source1  : https://www.apache.org/dist/perl/mod_perl-2.0.11.tar.gz.asc
@@ -97,6 +97,11 @@ cd %{_builddir}/mod_perl-2.0.11
 
 %build
 ## build_prepend content
+# Exclude a conditional package defined in
+# `Apache-Test/lib/Apache/TestRequest.pm`. The distro provider is the
+# `perl-HTTP-Message` package.
+%global __provides_exclude ^perl\\(HTTP::Request::Common\\)$
+
 export MP_APR_CONFIG=/usr/bin/apr-1-config
 ## build_prepend end
 export http_proxy=http://127.0.0.1:9/
