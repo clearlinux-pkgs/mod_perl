@@ -1,4 +1,4 @@
-From 2bcb08b4cc42785614f3296d8ec949f8b861fae2 Mon Sep 17 00:00:00 2001
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: "Brett T. Warden" <brett.t.warden@intel.com>
 Date: Wed, 6 Nov 2019 11:48:13 -0800
 Subject: [PATCH] Fixup installation paths
@@ -26,6 +26,3 @@ index 2ceb943..1f1323c 100644
  
  modperl_src_clean:
  	cd "$(MODPERL_SRC)" && $(MAKE) clean
--- 
-2.23.0
-

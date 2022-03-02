@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xAB34BA0040E92ECE (stevehay@apache.org)
 #
 Name     : mod_perl
-Version  : 2.0.11
-Release  : 14
-URL      : https://www.apache.org/dist/perl/mod_perl-2.0.11.tar.gz
-Source0  : https://www.apache.org/dist/perl/mod_perl-2.0.11.tar.gz
-Source1  : https://www.apache.org/dist/perl/mod_perl-2.0.11.tar.gz.asc
+Version  : 2.0.12
+Release  : 15
+URL      : https://www.apache.org/dist/perl/mod_perl-2.0.12.tar.gz
+Source0  : https://www.apache.org/dist/perl/mod_perl-2.0.12.tar.gz
+Source1  : https://www.apache.org/dist/perl/mod_perl-2.0.12.tar.gz.asc
 Summary  : An embedded Perl interpreter for the Apache Web server
 Group    : Development/Tools
 License  : Apache-1.1 Apache-2.0
@@ -23,13 +23,10 @@ Requires: perl(Linux::Pid)
 BuildRequires : apr-dev
 BuildRequires : apr-util-dev
 BuildRequires : buildreq-cpan
-BuildRequires : expat-dev
 BuildRequires : gdbm-dev
 BuildRequires : httpd-dev
 BuildRequires : httpd-extras
-BuildRequires : util-linux-dev
 Patch1: 0001-Fixup-installation-paths.patch
-Patch2: build.patch
 
 %description
 Mod_perl incorporates a Perl interpreter into the Apache web server,
@@ -90,10 +87,9 @@ perl components for the mod_perl package.
 
 
 %prep
-%setup -q -n mod_perl-2.0.11
-cd %{_builddir}/mod_perl-2.0.11
+%setup -q -n mod_perl-2.0.12
+cd %{_builddir}/mod_perl-2.0.12
 %patch1 -p1
-%patch2 -p1
 
 %build
 ## build_prepend content
@@ -126,11 +122,11 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/mod_perl
-cp %{_builddir}/mod_perl-2.0.11/Apache-Reload/LICENSE %{buildroot}/usr/share/package-licenses/mod_perl/2b8b815229aa8a61e483fb4ba0588b8b6c491890
-cp %{_builddir}/mod_perl-2.0.11/Apache-SizeLimit/LICENSE %{buildroot}/usr/share/package-licenses/mod_perl/2b8b815229aa8a61e483fb4ba0588b8b6c491890
-cp %{_builddir}/mod_perl-2.0.11/Apache-Test/LICENSE %{buildroot}/usr/share/package-licenses/mod_perl/2b8b815229aa8a61e483fb4ba0588b8b6c491890
-cp %{_builddir}/mod_perl-2.0.11/LICENSE %{buildroot}/usr/share/package-licenses/mod_perl/2b8b815229aa8a61e483fb4ba0588b8b6c491890
-cp %{_builddir}/mod_perl-2.0.11/NOTICE %{buildroot}/usr/share/package-licenses/mod_perl/97c92650e1f9ce20b0b9e82b6effb9653f0d5541
+cp %{_builddir}/mod_perl-2.0.12/Apache-Reload/LICENSE %{buildroot}/usr/share/package-licenses/mod_perl/2b8b815229aa8a61e483fb4ba0588b8b6c491890
+cp %{_builddir}/mod_perl-2.0.12/Apache-SizeLimit/LICENSE %{buildroot}/usr/share/package-licenses/mod_perl/2b8b815229aa8a61e483fb4ba0588b8b6c491890
+cp %{_builddir}/mod_perl-2.0.12/Apache-Test/LICENSE %{buildroot}/usr/share/package-licenses/mod_perl/2b8b815229aa8a61e483fb4ba0588b8b6c491890
+cp %{_builddir}/mod_perl-2.0.12/LICENSE %{buildroot}/usr/share/package-licenses/mod_perl/2b8b815229aa8a61e483fb4ba0588b8b6c491890
+cp %{_builddir}/mod_perl-2.0.12/NOTICE %{buildroot}/usr/share/package-licenses/mod_perl/97c92650e1f9ce20b0b9e82b6effb9653f0d5541
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
