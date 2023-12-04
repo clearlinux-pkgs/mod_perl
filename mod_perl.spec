@@ -7,7 +7,7 @@
 #
 Name     : mod_perl
 Version  : 2.0.12
-Release  : 20
+Release  : 21
 URL      : https://www.apache.org/dist/perl/mod_perl-2.0.12.tar.gz
 Source0  : https://www.apache.org/dist/perl/mod_perl-2.0.12.tar.gz
 Source1  : https://www.apache.org/dist/perl/mod_perl-2.0.12.tar.gz.asc
