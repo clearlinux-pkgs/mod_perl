@@ -9,7 +9,7 @@
 #
 Name     : mod_perl
 Version  : 2.0.13
-Release  : 26
+Release  : 27
 URL      : https://dlcdn.apache.org/perl/mod_perl-2.0.13.tar.gz
 Source0  : https://dlcdn.apache.org/perl/mod_perl-2.0.13.tar.gz
 Source1  : https://dlcdn.apache.org/perl/mod_perl-2.0.13.tar.gz.asc
